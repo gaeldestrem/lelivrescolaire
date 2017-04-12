@@ -10,6 +10,8 @@ const students = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_STUDENT':
             return [...state, action.payload.student]
+        case 'REMOVE_STUDENT':
+            return state.filter(o => o.id !== action.payload.id)
         case 'UPDATE_STUDENT':
             let oldIndex = state.findIndex(o => o.id === action.payload.oldId)
             let updatedStudent = Object.assign({}, state[oldIndex], action.payload.student)

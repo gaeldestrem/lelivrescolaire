@@ -27,6 +27,22 @@ it('should add a student and not mutate the previous state', () => {
     expect(students(stateBefore, action)).toEqual(stateAfter)
 });
 
+it('should remove a student and not mutate the previous state', () => {
+    const action = {
+        type: 'REMOVE_STUDENT',
+        payload: {
+            id: 'test1'
+        }
+    }
+
+    const stateAfter = [
+        {id: 'test2', firstName: 'test2'}
+    ]
+
+    deepFreeze(stateBefore)
+    expect(students(stateBefore, action)).toEqual(stateAfter)
+})
+
 it('should edit a student and not mutate the previous state', () => {
     const action = {
         type: 'UPDATE_STUDENT',
