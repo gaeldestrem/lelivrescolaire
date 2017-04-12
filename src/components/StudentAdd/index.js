@@ -14,7 +14,7 @@ class StudentAdd extends React.Component {
         let randomAvatarId = Math.floor(Math.random() * 100)
         this.state = {
             picture: `https://randomuser.me/api/portraits/men/${randomAvatarId}.jpg`,
-            id: Date.now(),
+            id: '' + Date.now(),
             email: '',
             firstName: '',
             lastName: '',
