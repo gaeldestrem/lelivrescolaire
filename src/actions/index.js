@@ -9,7 +9,17 @@ export const addStudent = (student) => {
     }
 }
 
-// Student Action
+export const updateStudent = (oldId, student) => {
+    return {
+        type: 'UPDATE_STUDENT',
+        payload: {
+            oldId,
+            student
+        }
+    }
+}
+
+// Student UI Action
 
 export const closeEdit = () => {
     return {
@@ -42,3 +52,4 @@ export const openCreateModal = () => {
         payload: {}
     }
 }
+
