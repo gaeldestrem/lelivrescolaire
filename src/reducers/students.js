@@ -8,6 +8,9 @@ const initialState = [
 
 const students = (state = initialState, action) => {
     switch (action.type) {
+        case 'ADD_STUDENT':
+            return [...state, action.payload.student]
+
         default:
             return state
     }
