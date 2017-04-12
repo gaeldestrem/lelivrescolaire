@@ -10,7 +10,14 @@ const students = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_STUDENT':
             return [...state, action.payload.student]
-
+        case 'UPDATE_STUDENT':
+            let oldIndex = state.findIndex(o => o.id === action.payload.oldId)
+            let updatedStudent = Object.assign({}, state[oldIndex], action.payload.student)
+            return [
+                ...state.slice(0, oldIndex),
+                updatedStudent,
+                ...state.slice(oldIndex + 1)
+            ]
         default:
             return state
     }
