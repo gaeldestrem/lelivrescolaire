@@ -1,13 +1,13 @@
 import React from 'react'
+import StudentEdit from '../StudentEdit'
 import './styles.css'
 
-const Student = ({student, isEdited, onEditClick, onEditCancel}) => {
+const Student = ({student, isEdited, onEditClick, onEditCancel, onEditUpdate}) => {
     return (
       <div className="student" >
           {isEdited ? (
               <div>
-                  <div>editMod</div>
-                  <button onClick={onEditCancel}>Annuler</button>
+                  <StudentEdit student={student} onEditUpdate={onEditUpdate} onEditCancel={onEditCancel}/>
               </div>
 
             ) : (
