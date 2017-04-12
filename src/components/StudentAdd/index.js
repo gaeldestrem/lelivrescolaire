@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles.css'
 
 class StudentAdd extends React.Component {
     constructor (props) {
@@ -47,7 +48,9 @@ class StudentAdd extends React.Component {
 
           <div>
               {this.props.createStudentModalOpened ? (
-                  <div>
+                  <div className="create-student-modal">
+                      <h2>Ajout d'un étudiant</h2>
+
                       <img alt="avatar" src={this.state.picture}/>
                       <form onSubmit={this.onSubmit}>
                           <div>
@@ -78,7 +81,7 @@ class StudentAdd extends React.Component {
                   </div>
 
                 ) : (
-                  <div>
+                  <div className="text-center">
                       <button onClick={this.onOpen}>Ajouter un participant</button>
                   </div>
                 )
