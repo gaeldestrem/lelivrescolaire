@@ -13,11 +13,16 @@ class StudentEdit extends React.Component {
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
+        this.onDelete = this.onDelete.bind(this);
     }
 
     onSubmit (e) {
         e.preventDefault()
         this.props.onEditUpdate(this.originalId, this.state)
+    }
+
+    onDelete () {
+        this.props.onStudentDelete(this.originalId)
     }
 
     onChange (e) {
@@ -52,6 +57,7 @@ class StudentEdit extends React.Component {
                   <button>Modifier</button>
               </form>
               <button onClick={this.props.onEditCancel}>Annuler</button>
+              <button onClick={this.onDelete}>Supprimer</button>
           </div>
         );
     }

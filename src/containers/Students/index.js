@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Students from '../../components/Students'
-import { closeEdit, openEdit, updateStudent } from '../../actions'
+import { closeEdit, openEdit, updateStudent, removeStudent } from '../../actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         onEditCancel: () => {
           dispatch(closeEdit())
+        },
+        onStudentDelete: (id) => {
+            dispatch(removeStudent(id))
         },
         onEditClick: (e) => {
             let id = e.currentTarget.id
