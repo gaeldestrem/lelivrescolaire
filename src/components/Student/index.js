@@ -14,10 +14,10 @@ const Student = ({student, isEdited, onEditClick, onEditCancel, onEditUpdate, on
               <div id={student.id} onClick={onEditClick}>
                   <div><img alt="avatar" className="avatar" src={student.picture}/></div>
                   <div>
-                      <div>id : {student.id}</div>
-                      <div>email : {student.email}</div>
-                      <div>nom : {student.lastName}</div>
-                      <div>prénom : {student.firstName}</div>
+                      {student.email && <div>id : {student.id}</div>}
+                      {student.email && <div>email : {student.email}</div> }
+                      {student.lastName && <div>nom : {student.lastName}</div> }
+                      {student.firstName && <div>prénom : {student.firstName}</div>}
                   </div>
               </div>
             )
