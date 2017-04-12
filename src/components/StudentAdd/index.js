@@ -53,36 +53,36 @@ class StudentAdd extends React.Component {
 
                       <img alt="avatar" src={this.state.picture}/>
                       <form onSubmit={this.onSubmit}>
-                          <div>
+                          <div className="row">
                               <label>photo :</label>
                               <input name="picture" type="text" value={this.state.picture} onChange={this.onChange}/>
                           </div>
-                          <div>
+                          <div className="row">
                               <label>id :</label>
                               <input name="id" type="text" value={this.state.id} onChange={this.onChange}/>
                           </div>
-                          <div>
+                          <div className="row">
                               <label>email :</label>
                               <input name="email" type="text" value={this.state.email} onChange={this.onChange}/>
                           </div>
-                          <div>
+                          <div className="row">
                               <label>nom : </label>
                               <input name="lastName" type="text" value={this.state.lastName} onChange={this.onChange}/>
                           </div>
-                          <div>
+                          <div className="row">
                               <label>prénom :</label>
                               <input name="firstName" type="text" value={this.state.firstName}
                                      onChange={this.onChange}/>
                           </div>
-                          <button type="submit">Ajouter</button>
+                          <button className="btn primary" type="submit">Ajouter</button>
                       </form>
 
-                      <button onClick={this.props.onClose}>Annuler</button>
+                      <button className="btn secondary" onClick={this.props.onClose}>Annuler</button>
                   </div>
 
                 ) : (
                   <div className="text-center">
-                      <button onClick={this.onOpen}>Ajouter un participant</button>
+                      <button className="btn primary" onClick={this.onOpen}>Ajouter un participant</button>
                   </div>
                 )
               }

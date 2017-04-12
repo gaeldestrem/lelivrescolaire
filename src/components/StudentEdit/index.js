@@ -37,27 +37,28 @@ class StudentEdit extends React.Component {
     render () {
         return (
           <div>
+              <div><img alt="avatar" className="avatar" src={this.props.student.picture}/></div>
               <form onSubmit={this.onSubmit}>
-                  <div>
+                  <div className="row">
                       <label>id :</label>
                       <input name="id" type="text" value={this.state.id} onChange={this.onChange}/>
                   </div>
-                  <div>
+                  <div className="row">
                       <label>email :</label>
                       <input name="email" type="text" value={this.state.email} onChange={this.onChange}/>
                   </div>
-                  <div>
+                  <div className="row">
                       <label>nom :</label>
                       <input name="lastName" type="text" value={this.state.lastName} onChange={this.onChange}/>
                   </div>
-                  <div>
+                  <div className="row">
                       <label>prénom :</label>
                       <input name="firstName" type="text" value={this.state.firstName} onChange={this.onChange}/>
                   </div>
-                  <button>Modifier</button>
+                  <button className="btn primary">Modifier</button>
               </form>
-              <button onClick={this.props.onEditCancel}>Annuler</button>
-              <button onClick={this.onDelete}>Supprimer</button>
+              <button className="btn secondary" onClick={this.props.onEditCancel}>Annuler</button>
+              <button className="btn danger" onClick={this.onDelete}>Supprimer</button>
           </div>
         );
     }
