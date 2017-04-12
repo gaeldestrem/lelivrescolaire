@@ -36,3 +36,42 @@ it('should close the modal and not mutate the previous state', () => {
     deepFreeze(stateBefore)
     expect(ui(stateBefore, action)).toEqual(stateAfter)
 });
+
+it('should update the editId and not mutate the previous state', () => {
+    let stateBefore = {
+        editId: null
+    }
+
+    const action = {
+        type: 'EDIT_STUDENT',
+        payload: {
+            id:'tierry-rice'
+        }
+    }
+
+    let stateAfter = {
+        editId: 'tierry-rice'
+    }
+
+    deepFreeze(stateBefore)
+    expect(ui(stateBefore, action)).toEqual(stateAfter)
+});
+
+it('should cancel the editId and not mutate the previous state', () => {
+    let stateBefore = {
+        editId: 'tierry-rice'
+    }
+
+    const action = {
+        type: 'CANCEL_EDIT_STUDENT',
+        payload: {}
+    }
+
+    let stateAfter = {
+        editId: null
+    }
+
+    deepFreeze(stateBefore)
+    expect(ui(stateBefore, action)).toEqual(stateAfter)
+});
+
