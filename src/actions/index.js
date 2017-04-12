@@ -19,6 +19,15 @@ export const updateStudent = (oldId, student) => {
     }
 }
 
+export const removeStudent = (id) => {
+    return {
+        type: 'REMOVE_STUDENT',
+        payload: {
+            id
+        }
+    }
+}
+
 // Student UI Action
 
 export const closeEdit = () => {
